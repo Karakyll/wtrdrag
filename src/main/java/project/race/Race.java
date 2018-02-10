@@ -43,7 +43,7 @@ public class Race implements Serializable{
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "autodrome_id", nullable = false)
+    @JoinColumn(name = "track_id", nullable = false)
     public Track getTrack() {
         return track;
     }
