@@ -1,7 +1,5 @@
-package main.java.project.car;
+package project.entity;
 
-import main.java.project.race.Race;
-import main.java.project.sponsor.Sponsor;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -11,13 +9,13 @@ import java.util.Set;
 @Table(name = "cars")
 public class Car implements Serializable{
 
-    private Integer carId;
+    private Long carId;
     private String mark;
     private String model;
     private String pilotFirstName;
     private String pilotLastName;
-    private int power;
-    private int torque;
+    private Integer power;
+    private Integer torque;
     private String spec;
     private Sponsor sponsor;
     private Set<Race> races = new HashSet<>(0);
@@ -28,11 +26,11 @@ public class Car implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "car_id", unique = true, nullable = false)
-    public Integer getCarId() {
+    public Long getCarId() {
         return carId;
     }
 
-    public void setCarId(Integer carId) {
+    public void setCarId(Long carId) {
         this.carId = carId;
     }
 
@@ -116,5 +114,28 @@ public class Car implements Serializable{
 
     public void setRaces(Set<Race> races) {
         this.races = races;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("Car [id:  %-5d" +
+                "Mark:  %-15s" +
+                "Model: %-15s" +
+                "Pilot first name:  %-20s" +
+                "Pilot last name:  %-20s" +
+                "Power:  %-7d" +
+                "Torque:  %-7d" +
+                "Sponsor:  %-5d" +
+                "Spec:  %-50s" +
+                "]",
+                carId,
+                mark,
+                model,
+                pilotFirstName,
+                pilotLastName,
+                power,
+                torque,
+                sponsor.getSponsorId(),
+                spec);
     }
 }

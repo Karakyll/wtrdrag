@@ -1,22 +1,21 @@
-package main.java.project.race;
+package project.entity;
 
-import main.java.project.track.Track;
-import main.java.project.car.Car;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Entity
 @Table(name = "races")
 public class Race implements Serializable{
 
-    private Integer raceId;
+    private Long raceId;
     private Car car;
     private Track track;
     private Date dateTime;
-    private double reactionTime;
-    private double elapsedTime;
-    private double finishSpeed;
+    private Double reactionTime;
+    private Double elapsedTime;
+    private Double finishSpeed;
 
     public Race() {
     }
@@ -24,11 +23,11 @@ public class Race implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "race_id", unique = true, nullable = false)
-    public Integer getRaceId() {
+    public Long getRaceId() {
         return raceId;
     }
 
-    public void setRaceId(Integer raceId) {
+    public void setRaceId(Long raceId) {
         this.raceId = raceId;
     }
 
@@ -64,29 +63,49 @@ public class Race implements Serializable{
 
 
     @Column(name = "reaction_time", nullable = false)
-    public double getReactionTime() {
+    public Double getReactionTime() {
         return reactionTime;
     }
 
-    public void setReactionTime(double reactionTime) {
+    public void setReactionTime(Double reactionTime) {
         this.reactionTime = reactionTime;
     }
 
     @Column(name = "elapsed_time", nullable = false)
-    public double getElapsedTime() {
+    public Double getElapsedTime() {
         return elapsedTime;
     }
 
-    public void setElapsedTime(double elapsedTime) {
+    public void setElapsedTime(Double elapsedTime) {
         this.elapsedTime = elapsedTime;
     }
 
     @Column(name = "finish_speed", nullable = false)
-    public double getFinishSpeed() {
+    public Double getFinishSpeed() {
         return finishSpeed;
     }
 
-    public void setFinishSpeed(double finishSpeed) {
+    public void setFinishSpeed(Double finishSpeed) {
         this.finishSpeed = finishSpeed;
     }
+
+    @Override
+    public String toString(){
+        return String.format("Race [id:  %-5d" +
+                "CarId:  %-5d" +
+                "Track:  %-5d" +
+                "Date:  %-20s" +
+                "Reaction time:  %-10s" +
+                "Elapsed time:  %-10s" +
+                "Finish speed:  %-10s" +
+                "]",
+                raceId,
+                car.getCarId(),
+                track.getTrackId(),
+                new SimpleDateFormat("dd.MM.yyyy hh:mm").format(dateTime),
+                reactionTime,
+                elapsedTime,
+                finishSpeed );
+    }
+
 }

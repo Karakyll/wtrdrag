@@ -1,6 +1,5 @@
-package main.java.project.sponsor;
+package project.entity;
 
-import main.java.project.car.Car;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -10,10 +9,10 @@ import java.util.Set;
 @Table(name = "sponsors")
 public class Sponsor implements Serializable{
 
-    private Integer sponsorId;
+    private Long sponsorId;
     private String sponsorName;
     private String sponsorSlogan;
-    private Set<Car> cars = new HashSet<>(0);
+    private Set<Car> carEntities = new HashSet<>(0);
 
     public Sponsor(){
     }
@@ -21,11 +20,11 @@ public class Sponsor implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "sponsor_id", unique = true, nullable = false)
-    public Integer getSponsorId() {
+    public Long getSponsorId() {
         return sponsorId;
     }
 
-    public void setSponsorId(Integer sponsorId) {
+    public void setSponsorId(Long sponsorId) {
         this.sponsorId = sponsorId;
     }
 
@@ -38,7 +37,7 @@ public class Sponsor implements Serializable{
         this.sponsorName = sponsorName;
     }
 
-    @Column(name = "slogan")
+    @Column(name = "sponsor_slogan")
     public String getSponsorSlogan() {
         return sponsorSlogan;
     }
@@ -48,11 +47,22 @@ public class Sponsor implements Serializable{
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "sponsor")
-    public Set<Car> getCars() {
-        return cars;
+    public Set<Car> getCarEntities() {
+        return carEntities;
     }
 
-    public void setCars(Set<Car> cars) {
-        this.cars = cars;
+    public void setCarEntities(Set<Car> carEntities) {
+        this.carEntities = carEntities;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("Sponsor [id:  %-5d" +
+                "Name:  %-30s" +
+                "Slogan:  %-50s" +
+                "]",
+                sponsorId,
+                sponsorName,
+                sponsorSlogan);
     }
 }
