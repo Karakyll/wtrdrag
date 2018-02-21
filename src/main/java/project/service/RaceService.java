@@ -8,4 +8,6 @@ public interface RaceService {
 
     List<Race> getAllRaces();
 
+   Race findRaceById(Long raceId);
+
 }

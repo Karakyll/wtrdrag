@@ -1,12 +1,21 @@
 package project.entity;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import project.entity.serializer.RaceSerializer;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ *  Entity class for "races" table in dataBase
+ */
 @Entity
 @Table(name = "races")
+@JsonSerialize(using = RaceSerializer.class)
 public class Race implements Serializable{
 
     private Long raceId;
@@ -17,9 +26,16 @@ public class Race implements Serializable{
     private Double elapsedTime;
     private Double finishSpeed;
 
+    /**
+     * Default constructor for Jackson deserializer
+     */
     public Race() {
     }
 
+    /**
+     * Getter for raceId field
+     * @return - raceId
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "race_id", unique = true, nullable = false)
@@ -31,6 +47,11 @@ public class Race implements Serializable{
         this.raceId = raceId;
     }
 
+    /**
+     * Getter for Car entity, what take part in this race
+     * @return - car
+     */
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "car_id", nullable = false)
     public Car getCar() {
@@ -41,6 +62,11 @@ public class Race implements Serializable{
         this.car = car;
     }
 
+    /**
+     * Getter for Track entity, where race was
+     * @return - track
+     */
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "track_id", nullable = false)
     public Track getTrack() {
@@ -51,6 +77,11 @@ public class Race implements Serializable{
         this.track = track;
     }
 
+    /**
+     * Getter for date and time, when race was
+     * @return - dateTime
+     */
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd.MM.yyyy hh:mm")
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "date_time", nullable = false)
     public Date getDateTime() {
@@ -61,7 +92,10 @@ public class Race implements Serializable{
         this.dateTime = dateTime;
     }
 
-
+    /**
+     * Getter for reaction time
+     * @return - reaction time
+     */
     @Column(name = "reaction_time", nullable = false)
     public Double getReactionTime() {
         return reactionTime;
@@ -71,6 +105,10 @@ public class Race implements Serializable{
         this.reactionTime = reactionTime;
     }
 
+    /**
+     * Getter for elapsed time
+     * @return - elapsed time
+     */
     @Column(name = "elapsed_time", nullable = false)
     public Double getElapsedTime() {
         return elapsedTime;
@@ -80,6 +118,10 @@ public class Race implements Serializable{
         this.elapsedTime = elapsedTime;
     }
 
+    /**
+     * Getter for finish speed
+     * @return - finish speed
+     */
     @Column(name = "finish_speed", nullable = false)
     public Double getFinishSpeed() {
         return finishSpeed;
@@ -89,6 +131,10 @@ public class Race implements Serializable{
         this.finishSpeed = finishSpeed;
     }
 
+    /**
+     * Override dafault method toString
+     * @return - string representation of object
+     */
     @Override
     public String toString(){
         return String.format("Race [id:  %-5d" +

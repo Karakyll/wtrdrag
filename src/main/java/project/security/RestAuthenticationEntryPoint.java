@@ -1,4 +1,4 @@
-package project.config;
+package project.security;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/**
+ * class for Entry point. need to configure Spring security.
+ * Send UNAUTHORIZED messages for unauthorized requests
+ */
 @Component( "restAuthenticationEntryPoint" )
 public class RestAuthenticationEntryPoint implements AuthenticationEntryPoint {
 
