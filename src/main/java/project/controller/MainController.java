@@ -1,17 +1,24 @@
 package project.controller;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+/**
+ * REST controller class for some "/**" requests
+ */
+@RestController
 public class MainController {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String hello(Model model) {
-        model.addAttribute("message", "Success!!!");
-        return "index";
+    /**
+     * TODO
+     * Map all "/" and "/about" GET requests
+     * @return - string hello
+     * TODO
+     */
+    @RequestMapping(value = { "/", "/about" }, method = RequestMethod.GET)
+    public String index() {
+        return "Hello !";
     }
 
 }

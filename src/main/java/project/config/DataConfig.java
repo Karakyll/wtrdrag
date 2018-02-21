@@ -1,13 +1,11 @@
 package project.config;
 
 import org.hibernate.jpa.HibernatePersistenceProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
-import org.springframework.core.env.Environment;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -18,6 +16,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.sql.DataSource;
 import java.util.Properties;
 
+/**
+ * Configuration class for Spring Data and JPA and Hibernate
+ */
 @Configuration
 @EnableTransactionManagement
 @ComponentScan(value = {"project.entity", "project.repository", "project.service.implementation"})
@@ -42,9 +43,10 @@ public class DataConfig {
     @Value("${hibernate.hbm2ddl.auto}")
     private String propHibernateHbm2DdlAuto;
 
-    @Autowired
-    private Environment env;
-
+    /**
+     * Bean for dataSource
+     * Configure params: jdbc-driver, url, username, password
+     */
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -57,6 +59,10 @@ public class DataConfig {
         return dataSource;
     }
 
+    /**
+     * Bean for entityManager
+     * Configure params: datasource, packages to scan, hibernate provider, properties for JPA, JPA vendor adapter
+     */
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
@@ -69,6 +75,9 @@ public class DataConfig {
         return entityManagerFactoryBean;
     }
 
+    /**
+     * Bean for transaction manager
+     */
     @Bean
     public JpaTransactionManager transactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
@@ -77,6 +86,10 @@ public class DataConfig {
         return transactionManager;
     }
 
+    /**
+     * Method to set hibernate properties/
+     * Such as: dialect, show slq. Take properties from "database.properties" file
+     */
     private Properties getHibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", propHibernateDialect);
