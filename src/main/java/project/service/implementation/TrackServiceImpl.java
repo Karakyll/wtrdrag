@@ -2,6 +2,7 @@ package project.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import project.entity.Track;
 import project.exceptions.TrackNotFoundException;
 import project.repository.TrackRepository;
@@ -14,6 +15,7 @@ import java.util.Optional;
  * Class for track service operations
  */
 @Service("trackService")
+@Transactional
 public class TrackServiceImpl implements project.service.TrackService {
 
     @Autowired

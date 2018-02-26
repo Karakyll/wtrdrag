@@ -3,31 +3,16 @@
 
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
         <append>true</append>
-        <file>logs/logback.log</file>
-        <layout class="ch.qos.logback.classic.PatternLayout">
+        <file>C:/Users/User-PC/IdeaProjects/wtrdrag/logs/WTRDRAG.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <Pattern>
                 %d{HH:mm:ss} %-5level %logger{36} - %msg%n
             </Pattern>
-        </layout>
+        </encoder>
     </appender>
 
-    <logger name="warning" level="WARNING">
-        <appender-ref ref="FILE" />
-    </logger>
 
-    <logger name="debug" level="DEBUG">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="trace" level="TRACE">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <logger name="info" level="INFO">
-        <appender-ref ref="FILE"/>
-    </logger>
-
-    <root level="ERROR">
+    <root level="INFO">
         <appender-ref ref="FILE"/>
     </root>
 

@@ -35,8 +35,6 @@ public class CarController {
      */
     @RequestMapping(method = RequestMethod.GET)
     List<Car> getAllCars() {
-
-        logger.info("get all cars.");
         return this.carService.getAllCars();
     }
 
@@ -52,7 +50,7 @@ public class CarController {
     }
 
     /**
-     * Map all "/cars" POST requests
+     * Map all "/cars" POST requests. Save new Car in DataBase
      * @param inputCar - Take JSON Car in Body
      * @return - status "created" with link to created resource
      */
