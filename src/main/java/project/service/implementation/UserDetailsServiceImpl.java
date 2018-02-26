@@ -7,6 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import project.entity.Role;
 import project.entity.User;
 import project.repository.UserRepository;
@@ -19,6 +20,7 @@ import java.util.Set;
  * Need for Spring security configuration
  */
 @Service("userDetailsService")
+@Transactional
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
@@ -26,11 +28,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-        User user = userRepository.findByUserName(userName).get();
+        User user;
 
-        if (user == null) {
+        if (!userRepository.findByUserName(userName).isPresent()) {
             throw new UsernameNotFoundException(userName);
         }
+
+        user = userRepository.findByUserName(userName).get();
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
 

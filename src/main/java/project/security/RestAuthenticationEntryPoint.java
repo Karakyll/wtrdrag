@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * class for Entry point. need to configure Spring security.
+ * class for Entry point.
  * Send UNAUTHORIZED messages for unauthorized requests
  */
 @Component( "restAuthenticationEntryPoint" )

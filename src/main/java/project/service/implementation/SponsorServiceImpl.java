@@ -2,6 +2,7 @@ package project.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import project.entity.Sponsor;
 import project.exceptions.SponsorNotFoundException;
 import project.repository.SponsorRepository;
@@ -14,6 +15,7 @@ import java.util.Optional;
  * Class for sponsor service operations
  */
 @Service("sponsorService")
+@Transactional
 public class SponsorServiceImpl implements project.service.SponsorService {
 
     @Autowired

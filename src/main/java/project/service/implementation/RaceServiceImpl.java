@@ -2,6 +2,7 @@ package project.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import project.entity.Race;
 import project.exceptions.RaceNotFoundException;
 import project.repository.RaceRepository;
@@ -13,6 +14,7 @@ import java.util.List;
  * Class for race service operations
  */
 @Service("raceService")
+@Transactional
 public class RaceServiceImpl implements project.service.RaceService {
 
     @Autowired

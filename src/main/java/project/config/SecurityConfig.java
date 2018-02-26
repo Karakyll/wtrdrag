@@ -12,8 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler;
-import project.security.MySavedRequestAwareAuthenticationSuccessHandler;
+import project.security.MyBasicAuthenticationEntryPoint;
 import project.security.RestAuthenticationEntryPoint;
 
 /**
@@ -25,17 +24,20 @@ import project.security.RestAuthenticationEntryPoint;
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
-    RestAuthenticationEntryPoint restAuthenticationEntryPoint;
+    MyBasicAuthenticationEntryPoint authenticationEntryPoint;
 
     @Autowired
     UserDetailsService userDetailsService;
+
+    @Autowired
+    DaoAuthenticationProvider authenticationProvider;
 
     /**
      * Configure user and role searching in dataBase
      */
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(authenticationProvider());
+        auth.authenticationProvider(authenticationProvider);
     }
 
     /**
@@ -45,34 +47,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
-                .exceptionHandling()
-                .authenticationEntryPoint(restAuthenticationEntryPoint)
-                .and()
                 .authorizeRequests()
                 .antMatchers("/admin/**").hasRole("ADMIN")
                 .antMatchers("/").permitAll()
+                .antMatchers("/cars").authenticated()
                 .and()
-                .formLogin()
-                .successHandler(mySuccessHandler())
-                .failureHandler(myFailureHandler())
+                .httpBasic()
+                .authenticationEntryPoint(authenticationEntryPoint)
                 .and()
                 .logout();
-    }
-
-    /**
-     * Bean for SuccessHandler
-     */
-    @Bean
-    public MySavedRequestAwareAuthenticationSuccessHandler mySuccessHandler(){
-        return new MySavedRequestAwareAuthenticationSuccessHandler();
-    }
-
-    /**
-     * Bean for failure handler
-     */
-    @Bean
-    public SimpleUrlAuthenticationFailureHandler myFailureHandler(){
-        return new SimpleUrlAuthenticationFailureHandler();
     }
 
     /**
@@ -95,21 +78,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder(11);
     }
 
-    /**
-     * Native SQL methods for searching users and roles in dataBase
-     */
-    /*
-    private String getUserQuery() {
-        return "SELECT user_name as username, user_password as password "
-                + "FROM users "
-                + "WHERE user_name = ?";
-    }
-    private String getAuthoritiesQuery() {
-        return "SELECT DISTINCT users.user_name as username, roles.role_name as authority "
-                + "FROM users, users_roles, roles "
-                + "WHERE users.user_id = users_roles.fk_users "
-                + "AND roles.role_id = users_roles.fk_roles "
-                + "AND users.user_name = ?";
-    }
-    */
 }

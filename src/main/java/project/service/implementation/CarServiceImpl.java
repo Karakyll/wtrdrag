@@ -2,6 +2,7 @@ package project.service.implementation;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import project.entity.Car;
 import project.exceptions.CarNotFoundException;
 import project.repository.CarRepository;
@@ -13,6 +14,7 @@ import java.util.List;
  * Class for car service operations
  */
 @Service("carService")
+@Transactional
 public class CarServiceImpl implements project.service.CarService {
 
     @Autowired

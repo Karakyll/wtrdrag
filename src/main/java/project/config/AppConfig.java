@@ -19,42 +19,7 @@ import java.util.Locale;
  */
 @Configuration
 @EnableWebMvc
-@Import({DataConfig.class, WebConfig.class,SecurityConfig.class})
-public class AppConfig implements WebMvcConfigurer {
-
-    /**
-     * Bean for message source.
-     * Set params: package with massages property file? encoding.
-     */
-    @Bean
-    public MessageSource messageSource() {
-        ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
-        messageSource.setBasename("/i18n/messages");
-        messageSource.setDefaultEncoding("UTF-8");
-        return messageSource;
-    }
-
-    /**
-     * Bean for locale resolver.
-     * Resolve locales in cookies.
-     */
-    @Bean
-    public LocaleResolver localeResolver(){
-        CookieLocaleResolver resolver = new CookieLocaleResolver();
-        resolver.setDefaultLocale(new Locale("en"));
-        resolver.setCookieName("myLocaleCookie");
-        resolver.setCookieMaxAge(4800);
-        return resolver;
-    }
-
-    /**
-     * Add inercepror, to intercept parameters like "/mylocale=ru_RU" and change it in program.
-     */
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
-        LocaleChangeInterceptor interceptor = new LocaleChangeInterceptor();
-        interceptor.setParamName("mylocale");
-        registry.addInterceptor(interceptor);
-    }
+@Import({DataConfig.class, SecurityConfig.class, WebConfig.class})
+public class AppConfig {
 
 }
