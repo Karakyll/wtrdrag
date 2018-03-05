@@ -2,10 +2,10 @@ package project.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.LocaleResolver;
 
 import java.util.Locale;
 
@@ -13,6 +13,8 @@ import java.util.Locale;
  * REST controller class for some "/**" requests
  */
 @RestController
+@RequestMapping(value = { "/", "/about" })
+@CrossOrigin(origins = "http://localhost:4200")
 public class MainController {
 
     @Autowired
@@ -24,7 +26,7 @@ public class MainController {
      * @return - string hello
      * TODO
      */
-    @RequestMapping(value = { "/", "/about" }, method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public String index() {
         return messageSource.getMessage("hello", null, new Locale("en","US"));
     }
