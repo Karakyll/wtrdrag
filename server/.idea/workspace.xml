@@ -6,77 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88530bed-4ce3-4d86-8392-9e5090081b2c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_9_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_9_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_9_4.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__net_bytebuddy_byte_buddy_1_6_14.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_5_2_12_Final.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_security_spring_security_acl_5_0_1_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_security_spring_security_config_5_0_1_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_security_spring_security_core_5_0_1_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_security_spring_security_taglibs_5_0_1_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_security_spring_security_web_5_0_1_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_aop_5_0_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_beans_5_0_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_context_5_0_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_expression_5_0_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_orm_5_0_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_springframework_spring_tx_5_0_3_RELEASE.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../WTRdrag.iml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../pom.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/config/AppConfig.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/config/DataConfig.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/config/SecurityConfig.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/config/WebAppInitializer.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/config/WebConfig.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/controller/CarController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/controller/MainController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/controller/RaceController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/controller/SponsorController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/controller/TrackController.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/entity/Car.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/entity/Race.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/entity/Role.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/entity/Sponsor.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/entity/Track.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/entity/User.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/entity/deserializer/CarDeserializer.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/entity/serializer/CarSerializer.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/entity/serializer/RaceSerializer.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/exceptions/CarNotFoundException.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/exceptions/RaceNotFoundException.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/exceptions/ResourceNotFoundException.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/exceptions/SponsorNotFoundException.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/exceptions/TrackNotFoundException.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/repository/CarRepository.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/repository/RaceRepository.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/repository/RoleRepository.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/repository/SponsorRepository.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/repository/TrackRepository.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/repository/UserRepository.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/security/MyBasicAuthenticationEntryPoint.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/security/RestAuthenticationEntryPoint.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/CarService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/RaceService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/SponsorService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/TrackService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/UserService.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/implementation/CarServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/implementation/RaceServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/implementation/SponsorServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/implementation/TrackServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/implementation/UserDetailsServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/java/project/service/implementation/UserServiceImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/logback.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/resources/properties/database.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/webapp/i18n/messages_en_US.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/webapp/i18n/messages_fr_FR.properties" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/../src/main/webapp/i18n/messages_ru_RU.properties" afterPath="" />
-    </list>
+    <list default="true" id="88530bed-4ce3-4d86-8392-9e5090081b2c" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -106,16 +36,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="105">
               <caret line="5" column="58" lean-forward="false" selection-start-line="5" selection-start-column="58" selection-end-line="5" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WTRDRAG.log" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/logs/WTRDRAG.log">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43890">
-              <caret line="2090" column="0" lean-forward="false" selection-start-line="2090" selection-start-column="0" selection-end-line="2090" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -645,12 +565,12 @@
       <workItem from="1520279134705" duration="3987000" />
       <workItem from="1520286063113" duration="101000" />
       <workItem from="1520352137627" duration="25510000" />
-      <workItem from="1520889965165" duration="254000" />
+      <workItem from="1520889965165" duration="847000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="168430000" />
+    <option name="totallyTimeSpent" value="169023000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1830" height="1098" extended-state="6" />
@@ -676,7 +596,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />

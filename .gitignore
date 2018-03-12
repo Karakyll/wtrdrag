@@ -1,4 +1,5 @@
+node_modules/
+server/logs/
 server/target/
 server/out/
-server/logs/
-frontend/node_mpdules
+frontend/node_modules/
