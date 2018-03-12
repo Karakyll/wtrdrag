@@ -1,0 +1,92 @@
+<div class="container">
+  <h1>Cars</h1>
+  <div>
+      <table class="table table-striped table-hover table-condensed">
+        <tr>
+          <td><b>Car Id</b></td>
+          <td><b>Mark</b></td>
+          <td><b>Model</b></td>
+          <td><b>Power</b></td>
+          <td><b>Torque</b></td>
+          <td><b>Pilot</b></td>
+          <td><b>Sponsor Id</b></td>
+          <td class="danger"><b>Delete car</b></td>
+        </tr>
+        <tr *ngFor="let car of cars" (click)="onClick(car)">
+          <td>{{car.carId}}</td>
+          <td>{{car.mark}}</td>
+          <td>{{car.model}}</td>
+          <td>{{car.power}}</td>
+          <td>{{car.torque}}</td>
+          <td><a routerLink="/users" (click)="$event.stopPropagation();">{{car.pilotFirstName}} {{car.pilotLastName}}</a></td>
+          <td>{{car.sponsorId}}</td>
+          <td><button class="btn btn-danger btn-xs" (click)="deleteCar(car); $event.stopPropagation();">X</button></td>
+        </tr>
+      </table>
+    </div>
+    <button class="btn" (click)=onSubmit() *ngIf=!submitted>Add new car</button>
+    <div *ngIf=submitted>
+      <h2>Add new race</h2>
+      <form (ngSubmit)="onSubmit()" #carForm="ngForm">
+        <div class="form-group row">
+          <div class="col-xs-4">
+            <label for="mark">Mark</label>
+            <input type="string" [(ngModel)]="mark" class="form-control input-sm" name="mark" #markInput="ngModel" required>
+            <div [hidden]="markInput.valid || markInput.pristine"
+                 class="alert alert-danger">
+              Mark is required
+            </div>
+          </div> 
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-4">
+            <label for="model">Model</label>
+            <input type="string" [(ngModel)]="model" class="form-control input-sm" name="model" #modelInput="ngModel" required>
+            <div [hidden]="modelInput.valid || modelInput.pristine"
+                 class="alert alert-danger">
+              Model is required
+            </div>
+          </div> 
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-4">
+            <label for="pilotFirstName">Pilot first name</label>
+            <input type="pilotFirstName" [(ngModel)]="pilotFirstName" class="form-control input-sm" name="pilotFirstName">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-4">
+            <label for="pilotLastName">Pilot last name</label>
+            <input type="string" [(ngModel)]="pilotLastName" class="form-control input-sm" name="pilotLastName">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-4">
+            <label for="power">Power</label>
+            <input type="number" [(ngModel)]="power" class="form-control input-sm" name="power">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-4">
+            <label for="torque">Torque</label>
+            <input type="number" [(ngModel)]="torque" class="form-control input-sm" name="torque">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-4">
+            <label for="sponsorId">Sponsor Id</label>
+            <input type="number" [(ngModel)]="sponsorId" class="form-control input-sm" name="sponsorId">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-xs-4">
+            <label for="spec">Spec</label>
+            <textarea name="spec" id="spec" cols="28" rows="5" [(ngModel)]="spec" class="form-control"></textarea>
+          </div>
+        </div>
+        <button class="btn" type="submit" (click)=addNewCar() [disabled]="!carForm.form.valid">Add</button>
+        <button class="btn btn-danger" type="submit" (click)="submitted=false">Cancel</button>
+      </form>
+    </div>
+</div>
+
