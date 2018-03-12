@@ -1,0 +1,4 @@
+server/target/
+server/out/
+server/logs/
+frontend/node_mpdules
