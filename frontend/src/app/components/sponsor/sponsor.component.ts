@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 import { SponsorService } from '../../services/sponsor.service';
 
 @Component({
@@ -12,8 +13,10 @@ export class SponsorComponent implements OnInit {
   sponsorName:string;
   sponsorSlogan:string;
   sponsors:Sponsor[];
-
-  constructor(private sponsorService:SponsorService) { }
+  
+  constructor(private translate: TranslateService, private sponsorService:SponsorService) {
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.sponsorService.getSponsors().subscribe((sponsors) => {
