@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 import { CarService } from '../../services/car.service';
 import { Router } from '@angular/router';
 
@@ -22,7 +23,9 @@ export class CarComponent implements OnInit {
 
   submitted:boolean;
 
-  constructor(private carService:CarService, private router: Router) { }
+  constructor(private translate: TranslateService, private carService:CarService, private router: Router) {
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.carService.getCars().subscribe((cars) => {

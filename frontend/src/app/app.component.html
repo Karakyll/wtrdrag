@@ -1,20 +1,22 @@
 <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" routerLink="/about">Way in the race</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a routerLink="/about">About</a></li>
-        <li><a routerLink="/tracks">Tracks</a></li>
-        <li><a routerLink="/cars">Cars</a></li>
-        <li><a routerLink="/sponsors">Sponsors</a></li>
-        <li><a routerLink="/races">Races</a></li>
-        <li><a routerLink="/users">User</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/">Way in the race</a>
     </div>
-  </nav>
+    <ul class="nav navbar-nav">
+      <li class="active"><a routerLink="/about">{{ 'about.navbar' | translate }}</a></li>
+      <li><a routerLink="/tracks">{{ 'tracks.navbar' | translate }}</a></li>
+      <li><a routerLink="/cars">{{ 'cars.navbar' | translate }}</a></li>
+      <li><a routerLink="/sponsors">{{ 'sponsors.navbar' | translate }}</a></li>
+      <li><a routerLink="/races">{{ 'races.navbar' | translate }}</a></li>
+      <li><a routerLink="/users">{{ 'user.navbar' | translate }}</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a (click)="changeLanguage('en')"><span class="glyphicon glyphicon-globe"></span> en</a></li>
+      <li><a (click)="changeLanguage('ru')"><span class="glyphicon glyphicon-globe"></span> ru</a></li>
+      <li><a routerLink="/signup"><span class="glyphicon glyphicon-user"></span> {{ 'signUp.navbar' | translate }}</a></li>
+      <li><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> {{ 'login.navbar' | translate }}</a></li>
+    </ul>
+  </div>
+</nav>
 <router-outlet></router-outlet>

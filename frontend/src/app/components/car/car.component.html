@@ -1,16 +1,16 @@
 <div class="container">
-  <h1>Cars</h1>
+  <h1>{{ 'cars.text' | translate }}</h1>
   <div>
       <table class="table table-striped table-hover table-condensed">
         <tr>
-          <td><b>Car Id</b></td>
-          <td><b>Mark</b></td>
-          <td><b>Model</b></td>
-          <td><b>Power</b></td>
-          <td><b>Torque</b></td>
-          <td><b>Pilot</b></td>
-          <td><b>Sponsor Id</b></td>
-          <td class="danger"><b>Delete car</b></td>
+          <td><b>{{ 'cars.table.carId' | translate }}</b></td>
+          <td><b>{{ 'cars.table.mark' | translate }}</b></td>
+          <td><b>{{ 'cars.table.model' | translate }}</b></td>
+          <td><b>{{ 'cars.table.power' | translate }}</b></td>
+          <td><b>{{ 'cars.table.torque' | translate }}</b></td>
+          <td><b>{{ 'cars.table.pilot' | translate }}</b></td>
+          <td><b>{{ 'cars.table.sponsorId' | translate }}</b></td>
+          <td class="danger"><b>{{ 'cars.table.delete' | translate }}</b></td>
         </tr>
         <tr *ngFor="let car of cars" (click)="onClick(car)">
           <td>{{car.carId}}</td>
@@ -24,69 +24,72 @@
         </tr>
       </table>
     </div>
-    <button class="btn" (click)=onSubmit() *ngIf=!submitted>Add new car</button>
+    <button class="btn" (click)=onSubmit() *ngIf=!submitted>{{ 'cars.buttons.addNewCar' | translate }}</button>
     <div *ngIf=submitted>
-      <h2>Add new race</h2>
+      <h2>{{ 'cars.form.text' | translate }}</h2>
       <form (ngSubmit)="onSubmit()" #carForm="ngForm">
         <div class="form-group row">
           <div class="col-xs-4">
-            <label for="mark">Mark</label>
+            <label for="mark">{{ 'cars.form.mark' | translate }}</label>
             <input type="string" [(ngModel)]="mark" class="form-control input-sm" name="mark" #markInput="ngModel" required>
             <div [hidden]="markInput.valid || markInput.pristine"
                  class="alert alert-danger">
-              Mark is required
+                 {{ 'cars.form.warningMessage' | translate }}
             </div>
           </div> 
         </div>
         <div class="form-group row">
           <div class="col-xs-4">
-            <label for="model">Model</label>
+            <label for="model">{{ 'cars.form.model' | translate }}</label>
             <input type="string" [(ngModel)]="model" class="form-control input-sm" name="model" #modelInput="ngModel" required>
             <div [hidden]="modelInput.valid || modelInput.pristine"
                  class="alert alert-danger">
-              Model is required
+                 {{ 'cars.form.warningMessage' | translate }}
             </div>
           </div> 
         </div>
         <div class="form-group row">
           <div class="col-xs-4">
-            <label for="pilotFirstName">Pilot first name</label>
+            <label for="pilotFirstName">{{ 'cars.form.pilotFirstName' | translate }}</label>
             <input type="pilotFirstName" [(ngModel)]="pilotFirstName" class="form-control input-sm" name="pilotFirstName">
           </div>
         </div>
         <div class="form-group row">
           <div class="col-xs-4">
-            <label for="pilotLastName">Pilot last name</label>
+            <label for="pilotLastName">{{ 'cars.form.pilotLastName' | translate }}</label>
             <input type="string" [(ngModel)]="pilotLastName" class="form-control input-sm" name="pilotLastName">
           </div>
         </div>
         <div class="form-group row">
           <div class="col-xs-4">
-            <label for="power">Power</label>
+            <label for="power">{{ 'cars.form.power' | translate }}</label>
             <input type="number" [(ngModel)]="power" class="form-control input-sm" name="power">
           </div>
         </div>
         <div class="form-group row">
           <div class="col-xs-4">
-            <label for="torque">Torque</label>
+            <label for="torque">{{ 'cars.form.torque' | translate }}</label>
             <input type="number" [(ngModel)]="torque" class="form-control input-sm" name="torque">
           </div>
         </div>
         <div class="form-group row">
           <div class="col-xs-4">
-            <label for="sponsorId">Sponsor Id</label>
+            <label for="sponsorId">{{ 'cars.form.sponsorId' | translate }}</label>
             <input type="number" [(ngModel)]="sponsorId" class="form-control input-sm" name="sponsorId">
           </div>
         </div>
         <div class="form-group row">
           <div class="col-xs-4">
-            <label for="spec">Spec</label>
+            <label for="spec">{{ 'cars.form.spec' | translate }}</label>
             <textarea name="spec" id="spec" cols="28" rows="5" [(ngModel)]="spec" class="form-control"></textarea>
           </div>
         </div>
-        <button class="btn" type="submit" (click)=addNewCar() [disabled]="!carForm.form.valid">Add</button>
-        <button class="btn btn-danger" type="submit" (click)="submitted=false">Cancel</button>
+        <button class="btn" type="submit" (click)=addNewCar() [disabled]="!carForm.form.valid">{{ 'cars.buttons.add' | translate }}</button>
+        <button class="btn btn-danger" type="submit" (click)="submitted=false">{{ 'cars.buttons.cancel' | translate }}</button>
       </form>
     </div>
+</div>
+<div>
+  <br>
 </div>
 

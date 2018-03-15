@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 import { TrackService } from '../../services/track.service';
 
 @Component({
@@ -12,9 +13,10 @@ export class TrackComponent implements OnInit {
   trackName:string;
   trackCountry:string;
   tracks:Track[];
-
-
-  constructor(private trackService:TrackService) { }
+  
+  constructor(private translate: TranslateService, private trackService:TrackService) {
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.trackService.getTracks().subscribe((tracks) => {

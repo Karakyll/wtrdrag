@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {TranslateService} from '@ngx-translate/core';
 import { RaceService } from '../../services/race.service';
 import { Router } from '@angular/router';
 
@@ -21,8 +22,10 @@ export class RaceComponent implements OnInit {
   races:Race[];
 
   submitted:boolean;
-
-  constructor(private raceService:RaceService) { }
+  
+  constructor(private translate: TranslateService, private raceService:RaceService) {
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.raceService.getRaces().subscribe((races) => {
