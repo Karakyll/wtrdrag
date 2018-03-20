@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" name="WTRdrag:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="WTRdrag-1.1.war">
+    <root id="archive" name="wtr-1.1.war">
       <element id="artifact" artifact-name="WTRdrag:war exploded" />
     </root>
   </artifact>
