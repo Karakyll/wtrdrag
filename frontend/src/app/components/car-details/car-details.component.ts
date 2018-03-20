@@ -21,8 +21,10 @@ export class CarDetailsComponent implements OnInit {
   sponsorId:number;
 
   private sub: any;
-
-  constructor(private carService:CarService, private route: ActivatedRoute) { }
+  
+  constructor(private translate: TranslateService, private carService:CarService, private route: ActivatedRoute) {
+    translate.setDefaultLang('en');
+  }
 
   ngOnInit() {
     this.sub = this.route.params.subscribe(params => {

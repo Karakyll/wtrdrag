@@ -1,0 +1,87 @@
+{
+    "techMess": "Work in progress..",
+    "about": {
+        "navbar": "About",
+        "text": "Way in the race web site v.0.2"
+    },
+    "tracks": {
+        "navbar": "Tracks",
+        "text": "Tracks"
+    },
+    "cars": {
+        "navbar": "Cars",
+        "text": "Cars",
+        "table": {
+            "carId": "Car ID",
+            "mark": "Mark",
+            "model": "Model",
+            "power": "Power",
+            "torque": "Torque",
+            "pilot": "Pilot",
+            "sponsorId": "Sponsor ID",
+            "delete": "Delete car"
+        },
+        "buttons": {
+            "addNewCar": "Add new car",
+            "add": "Add",
+            "cancel": "Cancel"
+        },
+        "form": {
+            "text": "Add new car",
+            "warningMessage": "Field is required",
+            "mark": "Mark",
+            "model": "Model",
+            "pilotFirstName": "Pilot first name",
+            "pilotLastName": "Pilot last name",
+            "power": "Power",
+            "torque": "Torque",
+            "sponsorId": "Sponsor ID",
+            "spec": "Spec"
+        }
+    },
+    "carDetails": {
+        "text": "Car details"
+    },
+    "sponsors": {
+        "navbar": "Sponsors",
+        "text": "Sponsors"
+    },
+    "races": {
+        "navbar": "Races",
+        "text": "Races",
+        "table": {
+            "raceId": "Race ID",
+            "trackId": "Track ID",
+            "carId": "Car ID",
+            "dateTime": "Date and time",
+            "reactionTime": "Reaction time",
+            "elapsedTime": "Elapsed time",
+            "finishSpeed": "Finish speed",
+            "delete": "Delete race"
+        },
+        "buttons": {
+            "addNewRace": "Add new race",
+            "add": "Add",
+            "cancel": "Cancel"
+        },
+        "form": {
+            "text": "Add new race",
+            "warningMessage": "Field is required",
+            "trackId": "Track ID",
+            "carId": "Car ID",
+            "dateTime": "Date and time",
+            "reactionTime": "Reaction time",
+            "elapsedTime": "Elapsed time",
+            "finishSpeed": "Finish speed"
+        }
+    },
+    "user": {
+        "navbar": "User"
+    },
+    "signUp": {
+        "navbar": "Sign up"
+    },
+    "login": {
+        "navbar": "Login"
+    }
+}
