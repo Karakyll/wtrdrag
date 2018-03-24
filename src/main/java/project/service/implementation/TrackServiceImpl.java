@@ -19,9 +19,6 @@ import java.util.Optional;
 public class TrackServiceImpl implements project.service.TrackService {
 
     @Autowired
-    EntityManager entityManager;
-
-    @Autowired
     TrackRepository trackRepository;
 
     /**

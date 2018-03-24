@@ -55,7 +55,7 @@ public class TrackController {
             URI location = ServletUriComponentsBuilder
                     .fromCurrentRequest().path("/{trackId}")
                     .buildAndExpand(result.getTrackId()).toUri();
-            return ResponseEntity.created(location).build();
+            return ResponseEntity.created(location).body(result);
         }
 
     }
