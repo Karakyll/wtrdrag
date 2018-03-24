@@ -28,8 +28,7 @@ public class CarController {
     @Autowired
     SponsorService sponsorService;
 
-    private static final Logger logger =
-            LoggerFactory.getLogger(CarController.class);
+    private static final Logger logger = LoggerFactory.getLogger(CarController.class);
 
     /**
      * Map all "/cars" GET requests
